@@ -20,6 +20,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  var userQuestion = 'question';
+  var userAnswer = 'answer';
+
+  final myTextStyle = TextStyle(fontSize: 30, color: Colors.deepPurple[900]);
+
   final List<String> buttons = [
     'C',
     'DEL',
@@ -50,7 +56,15 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: <Widget>[
           Expanded(
-            child: Container(),
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(userQuestion),
+                  Text(userAnswer),
+                ],
+              ),
+            ),
           ),
           Expanded(
             flex: 2,
