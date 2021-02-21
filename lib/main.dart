@@ -21,8 +21,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  var userQuestion = 'question';
-  var userAnswer = 'answer';
+  var userQuestion = '';
+  var userAnswer = '';
 
   final myTextStyle = TextStyle(fontSize: 30, color: Colors.deepPurple[900]);
 
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: Colors.lightBlue[100],
       body: Column(
         children: <Widget>[
           Expanded(
@@ -60,8 +60,17 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(userQuestion),
-                  Text(userAnswer),
+                  SizedBox(height: 50,),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    alignment: Alignment.centerLeft,
+                    child: Text(userQuestion, style: TextStyle(fontSize: 20),),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    alignment: Alignment.centerRight,
+                    child: Text(userAnswer, style: TextStyle(fontSize: 20),),
+                  ),
                 ],
               ),
             ),
@@ -82,14 +91,14 @@ class _HomePageState extends State<HomePage> {
                   } else if(i == 1) {
                     return MyButton(
                       buttonText: buttons[i],
-                      color: Colors.red,
+                      color: Colors.red[300],
                       textColor: Colors.white,
                     );
                   } else {
                     return MyButton(
                       buttonText: buttons[i],
-                      color: isOperator(buttons[i]) ? Colors.deepPurple : Colors.deepPurple[50],
-                      textColor: isOperator(buttons[i]) ? Colors.white : Colors.deepPurple,
+                      color: isOperator(buttons[i]) ? Colors.indigo : Colors.indigo[50],
+                      textColor: isOperator(buttons[i]) ? Colors.white : Colors.indigo,
                     );
                   }
                 },
