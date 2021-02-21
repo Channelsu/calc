@@ -19,6 +19,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  final List<String> buttons = [
+    'C', 'DEL', '%', '/',
+    '9', '8', '7', '×',
+    '6', '5', '4', '-',
+    '3', '2', '1', '+',
+    '0', '.', 'ANS', '=',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
